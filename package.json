@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://shivanshu26-bit.github.io/Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
