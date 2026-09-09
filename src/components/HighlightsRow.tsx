@@ -12,8 +12,8 @@ export default function HighlightsRow() {
             <div className="metric-lbl">FEATURED BUILDS</div>
           </div>
           <div className="highlights-metric-item">
-            <div className="metric-val text-metric">COMPETITIONS</div>
-            <div className="metric-lbl">& TECH EVENTS</div>
+            <div className="metric-val">10+</div>
+            <div className="metric-lbl">COMPETITIONS & EVENTS</div>
           </div>
           <div className="highlights-metric-item">
             <div className="metric-val">4</div>
