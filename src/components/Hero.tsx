@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePhoto from '../assets/profile.png';
+import profilePhoto from '../assets/profile.jpeg';
 
 interface HeroProps {
   onSelectCategory?: (category: string) => void;
@@ -26,25 +26,23 @@ export default function Hero({ onSelectCategory }: HeroProps) {
           {/* Left: Prominent Identity, Education Status & Positioning */}
           <div className="hero-text">
             {/* Main Name — unmistakable primary visual anchor */}
-            <h1 className="hero-name">SHIVANSHU SHUKLA</h1>
+            <h1 className="hero-name">Shivanshu Shukla</h1>
 
             {/* Current Student Status Line */}
             <div className="hero-status-row">
-              <span className="status-degree">BCA (AI & DATA SCIENCE) STUDENT</span>
-              <span className="status-sep">·</span>
-              <span className="status-school">K.R. Mangalam University</span>
+              <span className="status-degree">K.R. Mangalam University</span>
               <span className="status-sep">·</span>
               <span className="status-year">2025–2028</span>
             </div>
 
             {/* Role Headline */}
             <h2 className="hero-role-headline">
-              FULL-STACK DEVELOPER & BUILDER
+              BCA (Artificial Intelligence & Data Science) Student | Full-Stack Developer
             </h2>
 
             {/* Concise Introduction */}
             <p className="hero-intro">
-              I build practical software across full-stack web, AI, Web3 and interactive experiences.
+              I build web applications, developer tools, and AI-powered solutions using modern web technologies, APIs, and databases.
             </p>
 
             {/* 4 compact highlight tags */}

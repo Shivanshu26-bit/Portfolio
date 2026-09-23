@@ -6,35 +6,27 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     title: 'Languages',
-    items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'GDScript', 'Move', 'C / C++', 'HTML5 / CSS3'],
+    items: ['Python', 'JavaScript', 'TypeScript', 'C++'],
   },
   {
     title: 'Frontend',
-    items: ['React 19', 'Vite', 'Next.js', 'Vanilla JavaScript', 'Three.js', 'Responsive Web Design'],
+    items: ['React.js', 'HTML5', 'CSS3', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
-    items: ['Node.js', 'Express', 'FastAPI', 'REST APIs', 'JWT Authentication', 'Middleware Engineering'],
+    items: ['Node.js', 'Express.js', 'Flask', 'FastAPI'],
   },
   {
     title: 'Databases',
-    items: ['MongoDB Atlas', 'Firebase / Firestore', 'Document Stores', 'Relational Schema Design'],
+    items: ['MongoDB Atlas', 'PostgreSQL'],
   },
   {
-    title: 'AI / Developer Tools',
-    items: ['Google Gemini API', 'Codex CLI Middleware', 'DevLens Code Analysis', 'Git / GitHub', 'Postman'],
+    title: 'Tools & DevOps',
+    items: ['Git', 'GitHub', 'VS Code', 'Docker', 'Docker Compose'],
   },
   {
-    title: 'Cloud / DevOps',
-    items: ['Docker', 'Docker Compose', 'Render Deployment', 'GitHub Actions (CI/CD)'],
-  },
-  {
-    title: 'Web3',
-    items: ['Aptos', 'Move Language', 'Smart Contracts', 'Zero-Knowledge Proof Concepts'],
-  },
-  {
-    title: 'Game Development',
-    items: ['Godot 4', 'GDScript', '3D Vehicle Physics', 'Autonomous AI Logic', 'Custom Physics Systems'],
+    title: 'AI',
+    items: ['Prompt Engineering', 'Google Gemini / AI APIs'],
   },
 ];
 
@@ -45,7 +37,7 @@ export default function Skills() {
         <div className="section-label">Technical Stack</div>
         <h2 className="section-title">Skills & technologies.</h2>
         <p className="section-subtitle">
-          Direct practical experience across systems, full-stack web, AI tooling, Web3, and game architecture.
+          Direct practical experience across programming languages, full-stack engineering, databases, DevOps tools, and AI solutions.
         </p>
 
         <div className="skills-structured-grid">

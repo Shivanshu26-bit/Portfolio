@@ -35,7 +35,7 @@ export default function Contact() {
               GitHub
             </a>
             <a
-              href="mailto:shivanshu2626shukla@gmail.com"
+              href="mailto:shivanshushukl335@gmail.com"
               className="btn btn-secondary"
               aria-label="Send Email"
             >
@@ -45,6 +45,10 @@ export default function Contact() {
               </svg>
               Email
             </a>
+          </div>
+
+          <div style={{ marginTop: '1.25rem', fontSize: '0.84rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+            Direct: <a href="mailto:shivanshushukl335@gmail.com" style={{ color: 'var(--red-primary)', textDecoration: 'underline' }}>shivanshushukl335@gmail.com</a>
           </div>
         </div>
       </div>

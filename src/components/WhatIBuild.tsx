@@ -1,9 +1,11 @@
 interface CategoryItem {
   id: string;
   title: string;
-  count: string;
   summary: string;
-  projects: string[];
+  pills: string[];
+  filterTag?: string;
+  targetSection?: string;
+  filterHint?: string;
 }
 
 interface WhatIBuildProps {
@@ -12,49 +14,76 @@ interface WhatIBuildProps {
 }
 
 const whatIDoPoints = [
-  'Build full-stack web applications',
-  'Develop AI-powered tools and developer utilities',
-  'Explore Web3 and blockchain applications',
-  'Build interactive games and technical experiments',
-  'Participate in hackathons, competitions and tech communities',
+  'Build practical full-stack web applications with modern frameworks',
+  'Create developer tools for repository analysis and code metrics',
+  'Integrate Google Gemini and AI APIs for intelligent analysis',
+  'Design structured databases with MongoDB Atlas and PostgreSQL',
+  'Develop cybersecurity awareness projects and secure web interfaces',
+  'Organize student technology communities, hackathons, and workshops',
 ];
 
 const categories: CategoryItem[] = [
   {
-    id: 'FULL-STACK',
-    title: 'FULL-STACK',
-    count: '2 Projects',
-    summary: 'Production web apps with React, Express, Node.js, MongoDB, and Firebase.',
-    projects: ['AI Resume Studio', 'SmartAttend ERP'],
+    id: 'full-stack',
+    title: 'Full-Stack Web Applications',
+    summary: 'Building practical web applications with React, Node.js, Express.js, Flask, and FastAPI.',
+    pills: ['React.js', 'Node.js', 'Express.js', 'Flask', 'FastAPI'],
+    filterTag: 'FULL-STACK',
+    filterHint: 'Filter full-stack builds →',
   },
   {
-    id: 'AI & DEVELOPER TOOLS',
-    title: 'AI & DEVELOPER TOOLS',
-    count: '2 Projects',
-    summary: 'Gemini AI integration, FastAPI static code analysis, and CLI hooks.',
-    projects: ['DevLens', 'AI Resume Studio'],
+    id: 'dev-tools',
+    title: 'Developer Tools',
+    summary: 'Building developer-focused tools for GitHub repository analysis, code metrics, engineering reports, and development workflows.',
+    pills: ['Dev-Lens', 'GitHub Analysis', 'Code Metrics', 'Docker'],
+    filterTag: 'AI & DEVELOPER TOOLS',
+    filterHint: 'Filter developer tool builds →',
   },
   {
-    id: 'WEB3 / BLOCKCHAIN',
-    title: 'WEB3 / BLOCKCHAIN',
-    count: '1 Project',
-    summary: 'Smart contracts in Move on Aptos with zero-knowledge verification concepts.',
-    projects: ['Aptos ZK Badge'],
+    id: 'ai-apps',
+    title: 'AI-Powered Applications',
+    summary: 'Building applications that use Google Gemini and AI APIs for analysis, recommendations, and intelligent features.',
+    pills: ['Google Gemini', 'AI APIs', 'Prompt Engineering'],
+    filterTag: 'AI & DEVELOPER TOOLS',
+    filterHint: 'Filter AI builds →',
   },
   {
-    id: 'GAME DEVELOPMENT',
-    title: 'GAME DEVELOPMENT',
-    count: '1 Project',
-    summary: '3D vehicle physics, custom driving systems, and AI logic in Godot 4.',
-    projects: ['CAR-GAME (Street Horizon)'],
+    id: 'databases',
+    title: 'Database-Driven Systems',
+    summary: 'Working with MongoDB Atlas and PostgreSQL for structured application data and backend systems.',
+    pills: ['MongoDB Atlas', 'PostgreSQL', 'Schemas', 'REST APIs'],
+    filterTag: 'FULL-STACK',
+    filterHint: 'Filter database-backed builds →',
+  },
+  {
+    id: 'cybersecurity',
+    title: 'Cybersecurity Projects',
+    summary: 'Building cybersecurity awareness and web projects while exploring security-focused development.',
+    pills: ['CyberPulse', 'Security Awareness', 'Interactive JS'],
+    filterTag: 'WEB / JAVASCRIPT',
+    filterHint: 'Filter security & web builds →',
+  },
+  {
+    id: 'community',
+    title: 'Community & Technical Initiatives',
+    summary: 'Building and contributing to student technology communities, hackathons, workshops, and technical outreach.',
+    pills: ['2TechY Community', 'Campus Outreach', 'Hackathons'],
+    targetSection: '#community',
+    filterHint: 'View community initiative →',
   },
 ];
 
 export default function WhatIBuild({ selectedCategory, onSelectCategory }: WhatIBuildProps) {
-  const handleCategoryClick = (id: string) => {
-    const next = selectedCategory === id ? 'ALL' : id;
-    onSelectCategory(next);
-    document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+  const handleCategoryClick = (cat: CategoryItem) => {
+    if (cat.targetSection) {
+      document.querySelector(cat.targetSection)?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    if (cat.filterTag) {
+      const next = selectedCategory === cat.filterTag ? 'ALL' : cat.filterTag;
+      onSelectCategory(next);
+      document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -62,7 +91,7 @@ export default function WhatIBuild({ selectedCategory, onSelectCategory }: WhatI
       <div className="container">
         {/* WHAT I DO Concise Block */}
         <div className="what-i-do-container">
-          <div className="section-label">WHAT I DO</div>
+          <div className="section-label">WHAT I BUILD</div>
           <div className="what-i-do-grid">
             {whatIDoPoints.map((point) => (
               <div key={point} className="what-i-do-item">
@@ -73,26 +102,26 @@ export default function WhatIBuild({ selectedCategory, onSelectCategory }: WhatI
           </div>
         </div>
 
-        {/* 4 Compact Filter Categories */}
+        {/* 6 Structured Focus Categories */}
         <div className="what-build-header-block">
           <div>
             <div className="section-label">Technical Focus</div>
-            <h2 className="section-title">Core disciplines.</h2>
+            <h2 className="section-title">Core disciplines & work.</h2>
           </div>
           <p className="what-build-subtext">
-            Click any category to filter my featured builds below:
+            Areas of practical engineering, development workflows, and student leadership:
           </p>
         </div>
 
         <div className="what-i-build-grid">
           {categories.map((cat, idx) => {
-            const isSelected = selectedCategory === cat.id;
+            const isSelected = Boolean(cat.filterTag && selectedCategory === cat.filterTag);
             return (
               <button
                 key={cat.id}
                 type="button"
                 className={`what-build-btn ${isSelected ? 'active' : ''}`}
-                onClick={() => handleCategoryClick(cat.id)}
+                onClick={() => handleCategoryClick(cat)}
                 aria-pressed={isSelected}
               >
                 <div className="what-build-header">
@@ -101,14 +130,14 @@ export default function WhatIBuild({ selectedCategory, onSelectCategory }: WhatI
                 </div>
                 <p className="what-build-summary">{cat.summary}</p>
                 <div className="what-build-projects">
-                  {cat.projects.map((p) => (
-                    <span key={p} className="what-build-pill">
-                      {p}
+                  {cat.pills.map((pill) => (
+                    <span key={pill} className="what-build-pill">
+                      {pill}
                     </span>
                   ))}
                 </div>
                 <div className="what-build-filter-hint">
-                  {isSelected ? '✓ Filter active below' : 'Click to filter projects →'}
+                  {isSelected ? '✓ Filter active below' : cat.filterHint || 'Click to view projects →'}
                 </div>
               </button>
             );
