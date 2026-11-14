@@ -45,7 +45,7 @@ export default function Navbar() {
           className="nav-brand" 
           onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
         >
-          SS<span> / </span><small>Developer’s notebook</small>
+          SS<span> / </span><small>Code / Data / Community</small>
         </a>
 
         <ul id="main-menu" className={`nav-links ${mobileOpen ? 'open' : ''}`}>

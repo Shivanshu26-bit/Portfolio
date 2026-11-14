@@ -49,3 +49,7 @@ The second presentation pass uses a paper-and-ink visual direction with an overs
 Project selection stays within the current filter, with the first matching project as a fallback. Category and project buttons expose their selected state, updates are announced in a status region, and Escape closes the mobile menu and restores focus to its toggle. Responsive styles and reduced-motion preferences are supported. The page uses system font fallbacks if Google Fonts is unavailable.
 
 Validation: production build and server-rendered content/anchor/filter checks. Interactive browser and visual viewport checks were unavailable because the managed environment did not include its supported browser tool.
+
+## Midnight design edition
+
+The current interface replaces the paper palette and serif headings with midnight navy, electric yellow, cobalt accents, and Space Grotesk typography. The hero uses a portrait with an offset frame, while the project explorer uses a navigation rail and a separate architecture panel. The stylesheet is consolidated around the new palette and includes mobile layouts, visible focus styles, and reduced-motion support. Content and project filtering remain intact.
