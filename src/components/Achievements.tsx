@@ -62,7 +62,7 @@ export default function Achievements() {
   return (
     <section id="achievements" className="section section-neutral">
       <div className="container">
-        <div className="section-label">Verified Record</div>
+        <div className="section-label">From my journey</div>
         <h2 className="section-title">Achievements.</h2>
         <p className="section-subtitle">
           Core competitive awards, technical qualifications, and builder milestones.

@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Competitions', href: '#competitions' },
+  { label: 'Community', href: '#community' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +23,7 @@ export default function Navbar() {
         }
       }
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -47,11 +47,12 @@ export default function Navbar() {
           SHIVANSHU<span>.</span>
         </a>
 
-        <ul className={`nav-links ${mobileOpen ? 'open' : ''}`}>
+        <ul id="main-menu" className={`nav-links ${mobileOpen ? 'open' : ''}`}>
           {navItems.map(item => (
             <li key={item.href}>
               <a
                 href={item.href}
+                aria-current={activeSection === item.href.slice(1) ? 'location' : undefined}
                 className={`nav-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
                 onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
               >
@@ -78,8 +79,10 @@ export default function Navbar() {
         <button
           className={`mobile-toggle ${mobileOpen ? 'open' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
+          onKeyDown={(e) => { if (e.key === 'Escape') setMobileOpen(false); }}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
+          aria-controls="main-menu"
         >
           <span></span>
           <span></span>

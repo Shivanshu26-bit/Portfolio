@@ -148,7 +148,7 @@ export default function Hackathons() {
       <div id="hackathons" style={{ position: 'relative', top: '-60px' }} />
 
       <div className="container">
-        <div className="section-label">Verified Record</div>
+        <div className="section-label">From my journey</div>
         <h2 className="section-title">Competitions & tech events.</h2>
         <p className="section-subtitle">
           Factual record of competitions, hackathons, workshops, and technical events I have actively participated in.
@@ -161,6 +161,7 @@ export default function Hackathons() {
               key={tab.id}
               type="button"
               className={`events-tab-btn ${activeCategory === tab.id ? 'active' : ''}`}
+              aria-pressed={activeCategory === tab.id}
               onClick={() => setActiveCategory(tab.id)}
             >
               {tab.label}

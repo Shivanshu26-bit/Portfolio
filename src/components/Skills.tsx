@@ -25,8 +25,8 @@ const skillCategories: SkillCategory[] = [
     items: ['Git', 'GitHub', 'VS Code', 'Docker', 'Docker Compose'],
   },
   {
-    title: 'AI',
-    items: ['Prompt Engineering', 'Google Gemini / AI APIs'],
+    title: 'AI & Data',
+    items: ['Google Gemini / AI APIs', 'Pandas', 'Scikit-learn', 'SQL', 'Tableau Public'],
   },
 ];
 
@@ -34,8 +34,8 @@ export default function Skills() {
   return (
     <section id="skills" className="section section-tint-red">
       <div className="container">
-        <div className="section-label">Technical Stack</div>
-        <h2 className="section-title">Skills & technologies.</h2>
+        <div className="section-label">02 / The toolkit</div>
+        <h2 className="section-title">Tools behind the work.</h2>
         <p className="section-subtitle">
           Direct practical experience across programming languages, full-stack engineering, databases, DevOps tools, and AI solutions.
         </p>
