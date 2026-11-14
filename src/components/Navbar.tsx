@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navItems = [
   { label: 'Projects', href: '#projects' },
@@ -9,6 +9,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -37,14 +38,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="Main navigation">
+    <nav className="navbar" role="navigation" aria-label="Main navigation" onKeyDown={(e) => { if (e.key === 'Escape' && mobileOpen) { setMobileOpen(false); toggleRef.current?.focus(); } }}>
       <div className="container">
         <a 
           href="#home" 
           className="nav-brand" 
           onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
         >
-          SHIVANSHU<span>.</span>
+          SS<span> / </span><small>Developer’s notebook</small>
         </a>
 
         <ul id="main-menu" className={`nav-links ${mobileOpen ? 'open' : ''}`}>
@@ -77,9 +78,9 @@ export default function Navbar() {
         </ul>
 
         <button
+          ref={toggleRef}
           className={`mobile-toggle ${mobileOpen ? 'open' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
-          onKeyDown={(e) => { if (e.key === 'Escape') setMobileOpen(false); }}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
           aria-controls="main-menu"

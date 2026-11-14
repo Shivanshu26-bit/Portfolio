@@ -41,3 +41,11 @@ New content was checked against the public READMEs for:
 - [AI Resume Studio](https://github.com/Shivanshu26-bit/ai-resume-studio)
 
 LinkedIn blocked automated access (HTTP 999), so no new LinkedIn-only achievements or roles were added. Older projects and games remain available through the link to all repositories.
+
+## Notebook design edition
+
+The second presentation pass uses a paper-and-ink visual direction with an oversized serif nameplate, handwritten margin notes, a taped portrait, and a selectable project-file explorer. Workflow sketches explain each project's input, process, and output; they are schematic illustrations, not measured data visualizations. A 2TechY poster and expandable events archive give different content different presentation treatments.
+
+Project selection stays within the current filter, with the first matching project as a fallback. Category and project buttons expose their selected state, updates are announced in a status region, and Escape closes the mobile menu and restores focus to its toggle. Responsive styles and reduced-motion preferences are supported. The page uses system font fallbacks if Google Fonts is unavailable.
+
+Validation: production build and server-rendered content/anchor/filter checks. Interactive browser and visual viewport checks were unavailable because the managed environment did not include its supported browser tool.

@@ -62,10 +62,10 @@ export default function Achievements() {
   return (
     <section id="achievements" className="section section-neutral">
       <div className="container">
-        <div className="section-label">From my journey</div>
-        <h2 className="section-title">Achievements.</h2>
+        <div className="section-label">04 / Along the way</div>
+        <h2 className="section-title">A few milestones.</h2>
         <p className="section-subtitle">
-          Core competitive awards, technical qualifications, and builder milestones.
+          Placements, community recognition, and experiences collected along the way.
         </p>
 
         <div className="achievements-clean-list">

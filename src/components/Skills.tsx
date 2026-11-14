@@ -35,9 +35,9 @@ export default function Skills() {
     <section id="skills" className="section section-tint-red">
       <div className="container">
         <div className="section-label">02 / The toolkit</div>
-        <h2 className="section-title">Tools behind the work.</h2>
+        <h2 className="section-title">The things I reach for.</h2>
         <p className="section-subtitle">
-          Direct practical experience across programming languages, full-stack engineering, databases, DevOps tools, and AI solutions.
+          Different projects need different tools. These are the languages and technologies I use across my work.
         </p>
 
         <div className="skills-structured-grid">
