@@ -57,3 +57,7 @@ The current interface replaces the paper palette and serif headings with midnigh
 ## Colour portrait and project paths
 
 The original portrait now renders in full colour, without grayscale or saturation filters. Its image asset is unchanged. The hero adds a custom orbit illustration and an arched portrait frame, plus three discipline buttons that filter and scroll to matching projects. Each project receives its own accent colour and presentation hook. The update preserves keyboard access and reduced-motion scrolling preferences.
+
+## 2TechY brand integration
+
+The community section now includes the original high-resolution `logo.png` from the public 2TechY repository, stored locally as `src/assets/2techy-logo.png`. The artwork is unchanged; its display frame crops only the surrounding black padding. Teal, tangerine, and coral accents connect the portfolio's portrait, domain navigation, project panels, and community section. The contact section uses a light sea-glass background with dark text and focus outlines.
