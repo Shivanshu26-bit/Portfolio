@@ -61,3 +61,13 @@ The original portrait now renders in full colour, without grayscale or saturatio
 ## 2TechY brand integration
 
 The community section now includes the original high-resolution `logo.png` from the public 2TechY repository, stored locally as `src/assets/2techy-logo.png`. The artwork is unchanged; its display frame crops only the surrounding black padding. Teal, tangerine, and coral accents connect the portfolio's portrait, domain navigation, project panels, and community section. The contact section uses a light sea-glass background with dark text and focus outlines.
+
+## Chapter-select interface
+
+The portfolio now opens to seven named chapter buttons: About me, Projects, Skills, 2TechY, Achievements, Events, and Contact. Only the selected chapter's content renders. A persistent chapter rail and previous/next controls let visitors explore one section at a time. Menu and Escape return to the chapter grid.
+
+The presentation uses angular character-menu frames, chapter symbols, accent colours, and short entrance transitions. The real colour portrait, original 2TechY artwork, and existing portfolio content are preserved. Animation respects reduced-motion preferences.
+
+Chapter selection is stored in the URL hash and supports shared links and browser Back/Forward. The older `#home`, `#competitions`, and `#hackathons` links are mapped to their corresponding chapters. Navigation focuses the new chapter heading, and the skip link focuses the content without changing chapters. The buttons work with normal keyboard navigation.
+
+Validation includes the production build, rendering all eight menu/chapter routes, route aliases, selected navigation states, content isolation, source links, logo packaging, and reduced-motion styles. Interactive browser verification remains unavailable in this environment.
