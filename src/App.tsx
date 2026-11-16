@@ -11,5 +11,5 @@ import Footer from './components/Footer';
 import type { Category } from './data/projects';
 export default function App() {
   const [category, setCategory] = useState<Category>('All work');
-  return <><a className="skip-link" href="#main">Skip to content</a><Navbar /><main id="main"><Hero /><Projects selectedCategory={category} onSelectCategory={setCategory} /><Skills /><TwoTechY /><Achievements /><section className="event-archive"><div className="container"><details><summary><span>Field notes / Events & workshops</span><span>Open the archive +</span></summary><Hackathons /></details></div></section><Contact /></main><Footer /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Navbar /><main id="main"><Hero onExplore={(nextCategory) => { setCategory(nextCategory); document.getElementById('projects')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); }} /><Projects selectedCategory={category} onSelectCategory={setCategory} /><Skills /><TwoTechY /><Achievements /><section className="event-archive"><div className="container"><details><summary><span>Field notes / Events & workshops</span><span>Open the archive +</span></summary><Hackathons /></details></div></section><Contact /></main><Footer /></>;
 }

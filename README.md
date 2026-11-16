@@ -53,3 +53,7 @@ Validation: production build and server-rendered content/anchor/filter checks. I
 ## Midnight design edition
 
 The current interface replaces the paper palette and serif headings with midnight navy, electric yellow, cobalt accents, and Space Grotesk typography. The hero uses a portrait with an offset frame, while the project explorer uses a navigation rail and a separate architecture panel. The stylesheet is consolidated around the new palette and includes mobile layouts, visible focus styles, and reduced-motion support. Content and project filtering remain intact.
+
+## Colour portrait and project paths
+
+The original portrait now renders in full colour, without grayscale or saturation filters. Its image asset is unchanged. The hero adds a custom orbit illustration and an arched portrait frame, plus three discipline buttons that filter and scroll to matching projects. Each project receives its own accent colour and presentation hook. The update preserves keyboard access and reduced-motion scrolling preferences.
